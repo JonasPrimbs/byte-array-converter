@@ -10,9 +10,9 @@
     "encode",
     "hex"
   ],
-  "homepage": "https://github.com/JonasPrimbs/byte-converter#readme",
+  "homepage": "https://github.com/JonasPrimbs/byte-array-converter#readme",
   "bugs": {
-    "url": "https://github.com/JonasPrimbs/byte-converter/issues"
+    "url": "https://github.com/JonasPrimbs/byte-array-converter/issues"
   },
   "license": "MIT",
   "author": {
@@ -24,7 +24,7 @@
   "types": "./lib/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "github:JonasPrimbs/byte-converter.git"
+    "url": "github:JonasPrimbs/byte-array-converter.git"
   },
   "scripts": {
     "build": "tsc",
