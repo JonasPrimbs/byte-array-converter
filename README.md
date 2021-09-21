@@ -4,9 +4,9 @@ A tiny JavaScript Library for converting Uint8Arrays to various string represent
 
 ## Supported Encodings
 
-- HEX (hexadecimal)
-- Base64 (RFC 3548, 4648)
-- Base64url (RFC 4648)
+- HEX ([RFC 4194](https://datatracker.ietf.org/doc/html/rfc4194))
+- Base64 ([RFC 4648](https://datatracker.ietf.org/doc/html/rfc4648))
+- Base64url ([RFC 4648](https://datatracker.ietf.org/doc/html/rfc4648))
 
 ## Supported Platforms
 
@@ -27,11 +27,11 @@ Can be used in JavaScript and TypeScript.
 ```typescript
 import { decodeHex, encodeHex } from '@jonasprimbs/byte-array-converter';
 
-encodeHex(new Uint8Array([0, 8, 64, 255])); // "00:08:40:ff"
-encodeHex(new Uint8Array([0, 8, 64, 255]), ' '); // "00 08 40 ff"
+encodeHex(new Uint8Array([0, 8, 64, 255])); // "00:08:40:FF"
+encodeHex(new Uint8Array([0, 8, 64, 255]), ' '); // "00 08 40 FF"
 
-decodeHex('00:08:40:ff'); // Uint8Array(4) [ 0, 8, 64, 255 ]
-decodeHex('00 08 40 ff', ' '); // Uint8Array(4) [ 0, 8, 64, 255 ]
+decodeHex('00:08:40:FF'); // Uint8Array(4) [ 0, 8, 64, 255 ]
+decodeHex('00 08 40 FF', ' '); // Uint8Array(4) [ 0, 8, 64, 255 ]
 ```
 
 ### Uint8Array - Base64
@@ -59,11 +59,11 @@ decodeBase64url('AAhA_w'); // Uint8Array(4) [ 0, 8, 64, 255 ]
 ```typescript
 import { base64ToHex, hexToBase64 } from '@jonasprimbs/byte-array-converter';
 
-hexToBase64('00:08:40:ff'); // "AAhA/w=="
-hexToBase64('00 08 40 ff', ' '); // "AAhA/w=="
+hexToBase64('00:08:40:FF'); // "AAhA/w=="
+hexToBase64('00 08 40 FF', ' '); // "AAhA/w=="
 
-base64ToHex('AAhA/w=='); // "00:08:40:ff"
-base64ToHex('AAhA/w==', ' '); // "00 08 40 ff"
+base64ToHex('AAhA/w=='); // "00:08:40:FF"
+base64ToHex('AAhA/w==', ' '); // "00 08 40 FF"
 ```
 
 ### HEX - Base64url
@@ -71,11 +71,11 @@ base64ToHex('AAhA/w==', ' '); // "00 08 40 ff"
 ```typescript
 import { base64urlToHex, hexToBase64url } from '@jonasprimbs/byte-array-converter';
 
-hexToBase64url('00:08:40:ff'); // "AAhA_w"
-hexToBase64url('00 08 40 ff', ' '); // "AAhA_w"
+hexToBase64url('00:08:40:FF'); // "AAhA_w"
+hexToBase64url('00 08 40 FF', ' '); // "AAhA_w"
 
-base64urlToHex('AAhA_w'); // "00:08:40:ff"
-base64urlToHex('AAhA_w', ' '); // "00 08 40 ff"
+base64urlToHex('AAhA_w'); // "00:08:40:FF"
+base64urlToHex('AAhA_w', ' '); // "00 08 40 FF"
 ```
 
 ### Base64 - Base64url

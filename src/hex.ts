@@ -7,7 +7,8 @@
 export function encodeHex(byteArray: Uint8Array, separator = ':'): string {
   return Array.from(byteArray)
     .map((b) => (b < 16 ? '0' : '') + b.toString(16))
-    .join(separator);
+    .join(separator)
+    .toUpperCase();
 }
 
 /**
