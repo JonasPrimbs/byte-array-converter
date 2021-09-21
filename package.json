@@ -1,6 +1,6 @@
 {
   "name": "@jonasprimbs/byte-array-converter",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A tiny JavaScript Library for converting Uint8Arrays to various string representations and back.",
   "keywords": [
     "base64",
