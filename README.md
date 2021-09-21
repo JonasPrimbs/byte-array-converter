@@ -1,4 +1,4 @@
-# Byte Converter
+# Byte Array Converter
 
 A tiny JavaScript Library for converting Uint8Arrays to various string representations and back.
 
@@ -15,10 +15,12 @@ A tiny JavaScript Library for converting Uint8Arrays to various string represent
 ## Installation
 
 ```bash
-npm install byte-converter
+npm install byte-array-converter
 ```
 
 ## Usage
+
+Can be used in JavaScript and TypeScript.
 
 ### Uint8Array - HEX
 
