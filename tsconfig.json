@@ -15,8 +15,12 @@
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
     "module": "CommonJS",
+    "lib": [
+      "ES2015",
+      "DOM",
+    ],
     "outDir": "./lib",
-    "target": "es2015",
+    "target": "es5",
     "declaration": true
   },
   "include": [
