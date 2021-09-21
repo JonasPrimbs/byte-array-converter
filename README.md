@@ -14,8 +14,16 @@ A tiny JavaScript Library for converting Uint8Arrays to various string represent
 
 ## Installation
 
+### From NPM Registry
+
 ```bash
-npm install byte-array-converter
+npm install @jonasprimbs/byte-array-converter
+```
+
+### From Github Registry
+
+```bash
+npm install @jonasprimbs/byte-array-converter --registry=https://npm.pkg.github.com
 ```
 
 ## Usage
