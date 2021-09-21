@@ -43,19 +43,21 @@ export function base64urlToBase64(base64url: string): string {
 /**
  * Converts a HEX encoded Uint8Array string to a Base64url encoded Uint8Array string.
  * @param hex HEX encoded Uint8Array string to convert.
+ * @param separator Separator between HEX encoded bytes.
  * @returns Base64url encoded Uint8Array string.
  */
-export function hexToBase64url(hex: string): string {
-  const base64 = hexToBase64(hex);
+export function hexToBase64url(hex: string, separator = ':'): string {
+  const base64 = hexToBase64(hex, separator);
   return base64ToBase64url(base64);
 }
 
 /**
  * Converts a Base64url encoded Uint8Array string to a HEX encoded Uint8Array string.
  * @param base64url Base64url encoded Uint8Array string to convert.
+ * @param separator Separator between HEX encoded bytes.
  * @returns HEX encoded Uint8Array string.
  */
-export function base64urlToHex(base64url: string): string {
+export function base64urlToHex(base64url: string, separator = ':'): string {
   const base64 = base64urlToBase64(base64url);
-  return base64ToHex(base64);
+  return base64ToHex(base64, separator);
 }

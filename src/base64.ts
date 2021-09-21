@@ -30,19 +30,21 @@ export function decodeBase64(base64: string): Uint8Array {
 /**
  * Converts a HEX encoded Uint8Array string to a Base64 encoded Uint8Array string.
  * @param hex HEX encoded Uint8Array string to convert.
+ * @param separator Separator between HEX encoded bytes.
  * @returns Base64 encoded Uint8Array string.
  */
-export function hexToBase64(hex: string): string {
-  const byteArray = decodeHex(hex);
+export function hexToBase64(hex: string, separator = ':'): string {
+  const byteArray = decodeHex(hex, separator);
   return encodeBase64(byteArray);
 }
 
 /**
  * Converts a Base64 encoded Uint8Array string to a HEX encoded Uint8Array string.
  * @param base64 Base64 encoded Uint8Array string to convert.
+ * @param separator Separator between HEX encoded bytes.
  * @returns HEX encoded Uint8Array string.
  */
-export function base64ToHex(base64: string): string {
+export function base64ToHex(base64: string, separator = ':'): string {
   const byteArray = decodeBase64(base64);
-  return encodeHex(byteArray);
+  return encodeHex(byteArray, separator);
 }
