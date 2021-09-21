@@ -1,0 +1,13 @@
+{
+  "[typescript]": {
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": false,
+  },
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "typescript.preferences.quoteStyle": "single",
+  "editor.rulers": [
+    80
+  ]
+}
