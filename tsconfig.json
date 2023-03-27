@@ -14,9 +14,10 @@
     "strictFunctionTypes": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
-    "module": "CommonJS",
+    "module": "UMD",
+    "moduleResolution": "nodenext",
     "lib": [
-      "ES2015",
+      "ESNext",
       "DOM",
     ],
     "outDir": "./lib",
