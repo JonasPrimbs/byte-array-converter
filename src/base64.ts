@@ -6,11 +6,13 @@ import { decodeHex, encodeHex } from './hex';
  * @returns Base64 encoded Uint8Array string.
  */
 export function encodeBase64(byteArray: Uint8Array): string {
-  return window.btoa(
-    Array.from(byteArray)
-      .map((b) => String.fromCharCode(b))
-      .join('')
-  );
+  const array = Array.from(byteArray)
+    .map((b) => String.fromCharCode(b))
+    .join('');
+
+  return typeof window !== 'undefined'
+    ? window.btoa(array)
+    : Buffer.from(array).toString('base64');
 }
 
 /**
@@ -19,12 +21,12 @@ export function encodeBase64(byteArray: Uint8Array): string {
  * @returns Decoded Uint8Array.
  */
 export function decodeBase64(base64: string): Uint8Array {
-  return new Uint8Array(
-    window
-      .atob(base64)
-      .split('')
-      .map((b) => b.charCodeAt(0))
-  );
+  const str =
+    typeof window !== 'undefined'
+      ? window.atob(base64)
+      : Buffer.from(base64, 'base64').toString();
+
+  return new Uint8Array(str.split('').map((b) => b.charCodeAt(0)));
 }
 
 /**

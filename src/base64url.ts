@@ -35,9 +35,11 @@ export function base64ToBase64url(base64: string): string {
  * @returns Base64 encoded Uint8Array string.
  */
 export function base64urlToBase64(base64url: string): string {
-  return window.btoa(
-    window.atob(base64url.replace(/-/g, '+').replace(/_/g, '/'))
-  );
+  const array = base64url.replace(/-/g, '+').replace(/_/g, '/');
+
+  return typeof window !== 'undefined'
+    ? window.btoa(window.atob(array))
+    : Buffer.from(base64url, 'base64').toString();
 }
 
 /**
