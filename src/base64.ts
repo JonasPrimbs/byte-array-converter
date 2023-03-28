@@ -6,9 +6,7 @@ import { decodeHex, encodeHex } from './hex';
  * @returns Base64 encoded Uint8Array string.
  */
 export function encodeBase64(byteArray: Uint8Array): string {
-  const array = Array.from(byteArray)
-    .map((b) => String.fromCharCode(b))
-    .join('');
+  const array = String.fromCharCode(...Array.from(byteArray));
 
   return typeof window !== 'undefined'
     ? window.btoa(array)
