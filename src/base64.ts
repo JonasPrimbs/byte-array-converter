@@ -6,11 +6,11 @@ import { decodeHex, encodeHex } from './hex';
  * @returns Base64 encoded Uint8Array string.
  */
 export function encodeBase64(byteArray: Uint8Array): string {
-  const array = String.fromCharCode(...Array.from(byteArray));
-
-  return typeof window !== 'undefined'
-    ? window.btoa(array)
-    : Buffer.from(array).toString('base64');
+  if (typeof window !== 'undefined') {
+    return window.btoa(String.fromCharCode(...Array.from(byteArray)));
+  } else {
+    return Buffer.from(byteArray).toString('base64');
+  }
 }
 
 /**
