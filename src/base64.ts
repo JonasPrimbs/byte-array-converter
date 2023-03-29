@@ -19,12 +19,12 @@ export function encodeBase64(byteArray: Uint8Array): string {
  * @returns Decoded Uint8Array.
  */
 export function decodeBase64(base64: string): Uint8Array {
-  const str =
-    typeof window !== 'undefined'
-      ? window.atob(base64)
-      : Buffer.from(base64, 'base64').toString();
-
-  return new Uint8Array(str.split('').map((b) => b.charCodeAt(0)));
+  if (typeof window !== 'undefined') {
+    const str = window.atob(base64);
+    return new Uint8Array(str.split('').map((b) => b.charCodeAt(0)));
+  } else {
+    return Buffer.from(base64, 'base64');
+  }
 }
 
 /**
