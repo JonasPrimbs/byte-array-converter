@@ -39,7 +39,7 @@ export function base64urlToBase64(base64url: string): string {
 
   return typeof window !== 'undefined'
     ? window.btoa(window.atob(array))
-    : Buffer.from(base64url, 'base64').toString();
+    : Buffer.from(array, 'base64').toString();
 }
 
 /**
